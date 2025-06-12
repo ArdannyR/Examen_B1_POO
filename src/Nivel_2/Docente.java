@@ -24,6 +24,6 @@ public class Docente extends Persona {
 
     @Override
     public void mostrar() {
-        System.out.println("Docente: " + nombre + ", edad: " + edad);
+        System.out.printf("\nDocente: %s \tedad: %d años",nombre, edad);
     }
 }

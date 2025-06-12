@@ -16,13 +16,13 @@ public class C_Certificado extends Curso {
     public C_Certificado crear(Scanner sc) {
         System.out.print("Nombre del curso: "); nombre_curso = sc.nextLine();
         System.out.print("Duracion del curso: "); duracion_curso = sc.nextInt(); sc.nextLine();
-        System.out.print("Precio del curso: "); precio_curso = sc.nextDouble(); sc.nextLine();
-
+        System.out.print("Precio base del curso: "); double precio_base = sc.nextDouble(); sc.nextLine();
+        precio_curso = precio_base * 1.25;
         return new C_Certificado(nombre_curso, duracion_curso, precio_curso, certificado);
     }
 
     @Override
     public void mostrar() {
-        System.out.printf("Nombre del curso: %s Duracion del curso: %d Precio del curso: %.2f Certificado: %b",nombre_curso,duracion_curso,precio_curso,certificado);
+        System.out.printf("\nNombre del curso: %s \tDuracion del curso: %d horas\tPrecio del curso: %.2f$ \tCertificado: %b",nombre_curso,duracion_curso,precio_curso,certificado);
     }
 }
