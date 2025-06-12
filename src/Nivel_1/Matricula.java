@@ -11,17 +11,18 @@ public class Matricula extends Evaluacion {
     }
 
     public Matricula inscripcion(Scanner sc) {
-        System.out.print("Ingrese calificacion de su curso: "); calificacion = sc.nextDouble(); sc.nextLine();
-        if (calificacion < 0 || calificacion > 10) {
+        System.out.print("Ingrese calificacion de su curso: "); double calificacion_pos = sc.nextDouble(); sc.nextLine();
+        if (calificacion_pos < 0 || calificacion_pos > 10) {
             do {
-                System.out.print("Error: Ingrese calificacion del curso: "); calificacion = sc.nextDouble(); sc.nextLine();
-            } while (calificacion < 0 || calificacion > 10);
+                System.out.print("Error: Ingrese calificacion del curso: "); calificacion_pos = sc.nextDouble(); sc.nextLine();
+            } while (calificacion_pos < 0 || calificacion_pos > 10);
         }
-        return new Matricula(calificacion, true);
+        setCalificacion(calificacion_pos);
+        return new Matricula(getCalificacion(), true);
     }
 
     public void mostrar() {
-        System.out.printf("\nMatriculacion: %b \tCalificacion: %.2f", matricula, calificacion);
+        System.out.printf("\n * * * * * * * * * * * \nMatriculacion: %b \nCalificacion: %.2f", matricula, getCalificacion());
     }
 
 }

@@ -23,6 +23,6 @@ public class C_Certificado extends Curso {
 
     @Override
     public void mostrar() {
-        System.out.printf("\nNombre del curso: %s \tDuracion del curso: %d horas\tPrecio del curso: %.2f$ \tCertificado: %b",nombre_curso,duracion_curso,precio_curso,certificado);
+        System.out.printf("\n * * * * * * * * * * * \nNombre del curso: %s \nDuracion del curso: %d horas\nPrecio del curso: %.2f$ \nCertificado: %b",nombre_curso,duracion_curso,precio_curso,certificado);
     }
 }

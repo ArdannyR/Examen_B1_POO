@@ -2,7 +2,7 @@ package Nivel_1;
 
 
 public class Evaluacion {
-    public double calificacion;
+    private  double calificacion;
 
     public Evaluacion(double calificacion) {
         this.calificacion = calificacion;

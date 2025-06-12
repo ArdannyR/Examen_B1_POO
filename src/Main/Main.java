@@ -33,10 +33,10 @@ public class Main {
                 C_Certificado curso = new C_Certificado(null, 0, 0, false);
                 curso_c = curso.crear(sc);
             }
-
             else {
                 System.out.println("\nError: Opcion no valida.\n");
                 opcion_nivel_1 = 0;
+                break;
             }
 
             System.out.print("\n -- Docente\n");
@@ -61,6 +61,7 @@ public class Main {
                 curso_c.mostrar();
             }
             matricula.mostrar();
+            System.out.print("\n");
         } while (opcion_nivel_1 != 0);
 
     }
