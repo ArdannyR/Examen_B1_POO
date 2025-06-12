@@ -12,4 +12,5 @@ public abstract class Persona {
     }
 
     public abstract Persona ingresar(Scanner sc);
+    public abstract void mostrar ();
 }

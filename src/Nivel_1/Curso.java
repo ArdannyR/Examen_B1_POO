@@ -14,4 +14,5 @@ public abstract class Curso {
     }
 
     public abstract Curso crear(Scanner sc);
+    public abstract void mostrar();
 }

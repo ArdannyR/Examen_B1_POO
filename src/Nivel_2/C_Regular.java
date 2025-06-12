@@ -20,4 +20,9 @@ public class C_Regular extends Curso {
 
         return new C_Regular(nombre_curso, duracion_curso, precio_curso, evaluacion_final);
     }
+
+    @Override
+    public void mostrar() {
+        System.out.printf("Nombre del curso: %s Duracion del curso: %d Precio del curso: %.2f",nombre_curso,duracion_curso,precio_curso);
+    }
 }

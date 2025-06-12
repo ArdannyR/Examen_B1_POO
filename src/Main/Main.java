@@ -1,6 +1,7 @@
 package Main;
 
 import Nivel_1.Curso;
+import Nivel_1.Matricula;
 import Nivel_2.C_Certificado;
 import Nivel_2.C_Regular;
 import Nivel_2.Docente;
@@ -16,6 +17,8 @@ public class Main {
 
         // Instancias
         Scanner sc = new Scanner(System.in);
+        C_Regular curso_r = null;
+        C_Certificado curso_c = null;
 
 
         // Menu
@@ -24,11 +27,11 @@ public class Main {
             System.out.print("\n * * * * * * * * * * * * EPN-PLUS * * * * * * * * * * * * \n-- Ingrese (1)Curso Regular o (2)Curso Certificado: "); opcion_nivel_2 = sc.nextInt(); sc.nextLine();
             if (opcion_nivel_2 == 1) {
                 C_Regular curso = new C_Regular(null, 0, 0, false);
-                C_Regular curso_r = curso.crear(sc);
+                curso_r = curso.crear(sc);
             }
             else if (opcion_nivel_2 == 2) {
                 C_Certificado curso = new C_Certificado(null, 0, 0, false);
-                C_Certificado curso_r = curso.crear(sc);
+                curso_c = curso.crear(sc);
             }
 
             else {
@@ -44,7 +47,20 @@ public class Main {
             Estudiante persona_e = new Estudiante(null,0,false);
             Estudiante estudiante = persona_e.ingresar(sc);
 
+            System.out.print("\n -- Matricula del Estudiante\n");
+            Matricula vacio = new Matricula(0,false);
+            Matricula matricula = vacio.inscripcion(sc);
+            System.out.print("\n");
 
+            docente.mostrar();
+            estudiante.mostrar();
+            if (opcion_nivel_2 == 1) {
+                curso_r.mostrar();
+            }
+            else if (opcion_nivel_2 == 2) {
+                curso_c.mostrar();
+            }
+            matricula.mostrar();
         } while (opcion_nivel_1 != 0);
 
     }

@@ -1,6 +1,5 @@
 package Nivel_2;
 
-import Nivel_1.Curso;
 import Nivel_1.Persona;
 
 import java.util.Scanner;
@@ -17,6 +16,17 @@ public class Estudiante extends Persona {
     public Estudiante ingresar(Scanner sc) {
         System.out.print("Ingrese su nombre: "); nombre = sc.nextLine();
         System.out.print("Ingrese su edad: "); edad = sc.nextInt(); sc.nextLine();
+        if (edad < 13 | edad > 30) {
+            do {
+                System.out.print("Error! Ingrese su edad: "); edad = sc.nextInt(); sc.nextLine();
+            } while (edad < 13 | edad > 30);
+        }
         return new Estudiante(nombre, edad, true);
     }
+
+    @Override
+    public void mostrar() {
+        System.out.println("Estudiante: " + nombre + ", edad: " + edad);
+    }
+
 }
